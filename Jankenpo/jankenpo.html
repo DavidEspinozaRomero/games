@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+    }
+  </style>
+  <title>Jankenpon</title>
+</head>
+<body>
+  <h1>Pidra Papel Tijeras (Jankenpon)</h1>
+  <p>Escoge un número <br/> 1 = Piedra <br> 2 = Papel <br/> 3 = Tijera <br/> <hr></p>
+  <input type="number" id="usernumber">
+  <button id="run"> GO!</button>
+  <div id="result">
+    <p></p>
+  </div>
+
+  <script>
+    
+    var max = 3;
+    var min = 1;
+    const aleatorioMaxMin = (max, min) => Math.floor(Math.random() *(max - min + 1)) + min;
+
+    var ianumber = aleatorioMaxMin(max, min);
+    var usernumber = parseInt(number);
+    var number = document.getElementById("usernumber");
+    console.log(number);
+    
+
+    document.getElementById("run").addEventListener("click", jugar);
+    
+    function jugar (ianumber, usernumber) {      
+      console.log("*--------------------*");
+      console.log(`Escogiste =${usernumber} la IA=${ianumber}`);
+    }
+    if (ianumber >= 1 && ianumber <= 3) {
+      if (ianumber == usernumber) {
+        console.log("Empate Vuelve a intentar");
+        console.log(`Escogiste =${usernumber} la IA=${ianumber}`);
+      }else if (ianumber != usernumber){
+        if (ianumber == 3 && usernumber == 1 || usernumber == 2 && ianumber == 1 || usernumber == 3 && ianumber == 2 ) {
+          console.log("Ganaste!! La IA quiere revancha");          
+          console.log(`Escogiste =${usernumber} la IA=${ianumber}`);
+        } else {
+          console.log("Perdiste!! la IA se rie! ¿Quieres revancha? ");
+          console.log(`Escogiste =${usernumber} la IA=${ianumber}`);          
+        }
+      }
+    }else {
+      console.log(`Eso no es un numero ${usernumber} escoge del 1 al 3 chistoso!!`);
+    }
+
+    
+  </script>
+</body>
+</html>
+
+<!-- Wordpress user oNbiqQMGM1X9 -->
+
+
+<!--  PC -->
+
+The key's randomart image is:
++---[RSA 4096]----+
+|    .o+o+.       |
+|      .*o.       |
+| . .  +oBo       |
+|  oo...Xo .      |
+|....+oo S. .     |
+|++..oo .  .      |
+|*+o.   E .       |
+|o+o.  + o +      |
+| ..    ..*o.     |
++----[SHA256]-----+
